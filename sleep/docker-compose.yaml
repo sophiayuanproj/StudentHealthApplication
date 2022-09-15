@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  db:
+    image: mysql
+    restart: always
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
+    networks:
+      - sleep-network
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=sleep_test
+
+#  studyhabits:
+#    image: sleep
+#    depends_on:
+#      - mysql
+#    volumes:
+#      - /tmp:/tmp
+#    networks:
+#      - studyhabits_network
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      MYSQL_HOST: "mysql"
+#    restart: always
+#
+networks:
+  sleep-network:

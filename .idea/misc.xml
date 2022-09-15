@@ -5,5 +5,12 @@
     <file type="web" url="file://$PROJECT_DIR$/ExerciseAndMeditationMicroService/ExerciseAndMeditation" />
     <file type="web" url="file://$PROJECT_DIR$/StudyHabitsMicroService" />
   </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/sleep/pom.xml" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="16" project-jdk-type="JavaSDK" />
 </project>
