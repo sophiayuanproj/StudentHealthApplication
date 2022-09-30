@@ -9,6 +9,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.Duration;
 import java.time.Instant;
+import java.time.ZonedDateTime;
 
 @RequiredArgsConstructor
 @NoArgsConstructor
@@ -25,17 +26,18 @@ public class SleepModel {
     @Setter
     @NonNull
     @Column(name = "start")
-    private Instant start;
+    private ZonedDateTime start;
 
     @Getter
     @Setter
     @NonNull
     @Column(name = "end")
-    private Instant end;
+    private ZonedDateTime end;
 
     @Getter
     @Setter
     @Column(name = "feel")
+    @Enumerated(EnumType.STRING)
     private Feel feel;
 
     public enum Feel {
@@ -43,7 +45,8 @@ public class SleepModel {
         GOOD,
         NEUTRAL,
         BAD,
-        WORST
+        WORST,
+        NOT_SET
     }
 
     public Duration getDuration() {
